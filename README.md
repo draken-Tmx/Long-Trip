@@ -1,143 +1,112 @@
-Long Trip
+<a id="readme-top"></a>
 
-How many songs does your trip last?
+<!-- PROJECT SHIELDS -->""Python" (https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white)" (https://www.python.org/)
+""yt-dlp" (https://img.shields.io/badge/yt--dlp-audio%20downloader-000000?style=for-the-badge)" (https://github.com/yt-dlp/yt-dlp)
+""GitHub stars" (https://img.shields.io/github/stars/draken-Tmx/Long-Trip?style=for-the-badge)" (https://github.com/draken-Tmx/Long-Trip/stargazers)
+""GitHub issues" (https://img.shields.io/github/issues/draken-Tmx/Long-Trip?style=for-the-badge)" (https://github.com/draken-Tmx/Long-Trip/issues)
 
-Long Trip is a Python CLI project designed to help estimate how many songs you may need for a trip and download playlists for offline listening.
+<!-- PROJECT TITLE --><br /><div align="center">Long Trip
 
-It provides an interactive terminal menu with two main features: travel-time calculation and playlist downloading.
+¿Cuántas canciones dura tu viaje?
 
-Features
+A Python CLI tool to estimate your trip's soundtrack and download playlists for offline listening.
 
-- Travel time calculator: estimates the number of songs needed based on trip duration.
-- Playlist downloader: downloads playlist audio and converts it to MP3 using "yt-dlp" and FFmpeg.
-- Organized downloads: stores tracks in a folder named after the playlist, with track numbers in filenames.
+Una herramienta CLI en Python para calcular la banda sonora de tu viaje y descargar playlists para escucharlas sin conexión.
+
+"Explore the Project" (https://github.com/draken-Tmx/Long-Trip)
+·
+"Report a Bug" (https://github.com/draken-Tmx/Long-Trip/issues)
+·
+"Request a Feature" (https://github.com/draken-Tmx/Long-Trip/issues)
+
+</div>---
+
+<!-- TABLE OF CONTENTS --><details>
+  <summary><strong>Table of Contents / Índice</strong></summary>  <ol>
+    <li><a href="#about-the-project">About the Project / Sobre el proyecto</a></li>
+    <li><a href="#features">Features / Funcionalidades</a></li>
+    <li><a href="#built-with">Built With / Tecnologías</a></li>
+    <li><a href="#getting-started">Getting Started / Instalación</a></li>
+    <li><a href="#usage">Usage / Uso</a></li>
+    <li><a href="#project-structure">Project Structure / Estructura</a></li>
+    <li><a href="#roadmap">Roadmap / Próximamente</a></li>
+    <li><a href="#license">License / Licencia</a></li>
+    <li><a href="#contact">Contact / Contacto</a></li>
+  </ol>
+</details>---
+
+<!-- ABOUT THE PROJECT -->About the Project
+
+Long Trip is a command-line project built with Python. It helps estimate how many songs you may need for a trip and provides a way to download playlists for offline listening.
+
+The project combines a simple travel-time calculator with a playlist downloader in one interactive terminal menu.
+
+Sobre el proyecto
+
+Long Trip es un proyecto de línea de comandos desarrollado en Python. Permite estimar cuántas canciones podrías necesitar para un viaje y descargar playlists para escucharlas sin conexión.
+
+El proyecto combina una calculadora de tiempo de viaje con un descargador de playlists en un menú interactivo.
+
+<p align="right"><a href="#readme-top">Back to top ↑</a></p><!-- FEATURES -->Features
+
+- Travel calculator: estimates the number of songs needed for a trip.
+- Playlist downloader: downloads playlist audio and converts it to MP3.
+- Organized downloads: stores tracks in a playlist-named folder with numbered filenames.
 - Interactive CLI: access the available features through a terminal menu.
-- Virtual environment: isolates Python dependencies using "venv".
-- Setup script: automates environment creation and dependency installation.
+- Virtual environment: isolates Python dependencies with "venv".
+- Setup script: automates environment creation and Python dependency installation.
 
-Requirements
+Funcionalidades
 
-- Python 3
-- FFmpeg
-- Node.js
-- Git, to clone the repository
+- Calculadora de viaje: estima la cantidad de canciones necesarias para un viaje.
+- Descargador de playlists: descarga audio y lo convierte a MP3.
+- Descargas organizadas: guarda las canciones en una carpeta con el nombre de la playlist y archivos numerados.
+- Menú interactivo: permite acceder a las funciones desde la terminal.
+- Entorno virtual: mantiene aisladas las dependencias de Python mediante "venv".
+- Instalador: automatiza la creación del entorno y la instalación de dependencias.
 
-The Python dependencies are listed in "requirements.txt".
+<p align="right"><a href="#readme-top">Back to top ↑</a></p><!-- BUILT WITH -->Built With
 
-Installation
+Technology| Purpose
+"Python" (https://www.python.org/)| Application logic
+"yt-dlp" (https://github.com/yt-dlp/yt-dlp)| Playlist and media downloading
+"FFmpeg" (https://ffmpeg.org/)| Audio conversion and metadata processing
+"Rich" (https://github.com/Textualize/rich)| Terminal interface and status display
+"Node.js" (https://nodejs.org/)| JavaScript runtime used by the current "yt-dlp" configuration
 
-1. Install system dependencies
+<p align="right"><a href="#readme-top">Back to top ↑</a></p><!-- GETTING STARTED -->Getting Started
 
-On Termux:
+Follow these steps to install Long Trip on Termux.
+
+Prerequisites
+
+Install the required system packages:
 
 pkg update
 pkg install python ffmpeg nodejs git
 
-On other operating systems, install Python, FFmpeg, and Node.js using the appropriate package manager or official installers.
+Installation
 
-2. Clone the repository
+1. Clone the repository
 
 git clone https://github.com/draken-Tmx/Long-Trip.git
 cd Long-Trip
 
-3. Run the setup script
+2. Run the setup script
 
 chmod +x setup.sh
 ./setup.sh
 
-The script checks for the required system tools, creates the ".venv" virtual environment, installs the Python dependencies, and creates the "long-trip" launcher in "~/.local/bin".
+The setup script checks for the required tools, creates the ".venv" virtual environment, installs the dependencies from "requirements.txt", and creates the "long-trip" launcher in "~/.local/bin".
 
-Usage
+Instalación en español
 
-After installation, run Long Trip from the terminal:
+Seguí estos pasos para instalar Long Trip en Termux.
 
-long-trip
-
-The launcher uses the project's virtual environment automatically. You do not need to activate ".venv" manually.
-
-The interactive menu provides three options:
-
-1. Measure travel time: enter the trip duration in hours and additional minutes to estimate the number of songs needed.
-2. Download a playlist: provide a playlist URL and a destination directory.
-3. Exit: close the application.
-
-Travel time calculation
-
-The current calculator uses an average song duration of 3 minutes and 40 seconds and adds a 15% time allowance to the trip duration.
-
-These values produce an estimate; the calculator does not currently measure the actual duration of a playlist.
-
-Playlist downloading
-
-The downloader uses "yt-dlp" and FFmpeg to extract audio, convert it to MP3, and process available metadata and thumbnails.
-
-Downloaded tracks are organized into a playlist-named directory, with track numbers included in filenames.
-
-Project Structure
-
-Long-Trip/
-├── backend.py       # Calculation and download functions
-├── longtp.py        # Main CLI menu
-├── requirements.txt # Python dependencies
-├── setup.sh         # Environment setup script
-├── .gitignore       # Excluded files
-└── README.md        # Project documentation
-
-The ".venv/" directory is generated during setup and should not be committed to Git.
-
-Configuration Notes
-
-- The setup script expects "python", "ffmpeg", and "node" to be available in the system "PATH".
-- The current backend uses a Termux-specific Node.js path. Other environments may require adjusting this configuration.
-- If "cookies.txt" exists in the project directory, the downloader uses it. Otherwise, it proceeds without a cookie file.
-- Keep cookie files private and never commit them to the repository.
-
-Roadmap
-
-Long Trip is a work in progress. Additional features will be documented here as development goals are defined and implemented.
-
-Project Status
-
-The project is under active development. Features and configuration may change as development continues.
-
----
-
-Long Trip — Español
-
-¿Cuántas canciones dura tu viaje?
-
-Long Trip es un proyecto de Python con interfaz de línea de comandos (CLI) que permite estimar cuántas canciones podrías necesitar para un viaje y descargar playlists para escucharlas sin conexión.
-
-Ofrece un menú interactivo con dos funciones principales: calcular el tiempo de viaje y descargar playlists.
-
-Funcionalidades
-
-- Calculadora de viaje: estima la cantidad de canciones necesarias según la duración del viaje.
-- Descargador de playlists: descarga audio y lo convierte a MP3 mediante "yt-dlp" y FFmpeg.
-- Descargas organizadas: guarda las canciones en una carpeta con el nombre de la playlist y agrega el número de pista al nombre de cada archivo.
-- Menú interactivo: permite acceder a las funciones desde la terminal.
-- Entorno virtual: mantiene aisladas las dependencias de Python mediante "venv".
-- Instalador automático: crea el entorno e instala las dependencias del proyecto.
-
-Requisitos
-
-- Python 3
-- FFmpeg
-- Node.js
-- Git, para clonar el repositorio
-
-Las dependencias de Python están definidas en "requirements.txt".
-
-Instalación
-
-1. Instalar las dependencias del sistema
-
-En Termux:
+1. Instalar las herramientas necesarias
 
 pkg update
 pkg install python ffmpeg nodejs git
-
-En otros sistemas operativos, instalá Python, FFmpeg y Node.js mediante el gestor de paquetes correspondiente o sus instaladores oficiales.
 
 2. Clonar el repositorio
 
@@ -149,61 +118,99 @@ cd Long-Trip
 chmod +x setup.sh
 ./setup.sh
 
-El script comprueba las herramientas necesarias, crea el entorno virtual ".venv", instala las dependencias de Python y genera el lanzador "long-trip" en "~/.local/bin".
+El instalador comprueba las herramientas necesarias, crea el entorno virtual ".venv", instala las dependencias de "requirements.txt" y genera el comando "long-trip" en "~/.local/bin".
 
-Uso
+«Note / Nota: The current backend uses a Termux-specific Node.js path. Other environments may require a configuration change.
 
-Una vez instalado, ejecutá Long Trip desde la terminal:
+El backend utiliza actualmente una ruta de Node.js específica de Termux. En otros entornos puede ser necesario modificarla.»
+
+<p align="right"><a href="#readme-top">Back to top ↑</a></p><!-- USAGE -->Usage
+
+After installation, launch Long Trip from your terminal:
 
 long-trip
 
-El lanzador utiliza automáticamente el entorno virtual del proyecto. No necesitás activar ".venv" manualmente.
+The launcher runs the application using the project's virtual environment. Manual activation is not required.
 
-El menú interactivo ofrece tres opciones:
+Menú principal
 
-1. Calcular tiempo de viaje: ingresá la duración del viaje en horas y minutos adicionales para estimar la cantidad de canciones necesarias.
-2. Descargar una playlist: ingresá el enlace de la playlist y el directorio de destino.
-3. Salir: cerrar la aplicación.
+Option| Function
+"1"| Measure travel time / Calcular tiempo de viaje
+"2"| Download a playlist / Descargar una playlist
+"3"| Exit / Salir
 
-Cálculo del tiempo de viaje
+Travel Calculator / Calculadora de viaje
 
-La calculadora utiliza una duración promedio de canción de 3 minutos y 40 segundos y agrega un margen del 15 % al tiempo del viaje.
+The current calculation uses an average song duration of 3 minutes and 40 seconds and adds a 15% time allowance to the trip duration.
 
-El resultado es una estimación: actualmente, la calculadora no mide la duración real de una playlist.
+La calculadora utiliza una duración promedio de 3 minutos y 40 segundos y agrega un margen del 15 % al tiempo del viaje.
 
-Descarga de playlists
+«Results are estimates. The calculator does not currently analyze the actual duration of a playlist's tracks.
 
-El descargador utiliza "yt-dlp" y FFmpeg para extraer el audio, convertirlo a MP3 y procesar los metadatos y las miniaturas disponibles.
+Los resultados son estimaciones. Actualmente, la calculadora no analiza la duración real de las canciones de una playlist.»
 
-Las canciones se organizan en una carpeta con el nombre de la playlist y se identifican mediante números de pista en sus nombres de archivo.
+Playlist Downloader / Descargador de playlists
+
+Provide a playlist URL and a destination directory when prompted. The downloader uses "yt-dlp" and FFmpeg to process the audio and convert it to MP3.
+
+Ingresá el enlace de la playlist y la ruta de destino cuando el programa lo solicite. El descargador utiliza "yt-dlp" y FFmpeg para procesar el audio y convertirlo a MP3.
+
+<p align="right"><a href="#readme-top">Back to top ↑</a></p><!-- PROJECT STRUCTURE -->Project Structure
+
+Long-Trip/
+├── backend.py
+├── longtp.py
+├── requirements.txt
+├── setup.sh
+├── .gitignore
+└── README.md
+
+File| Description
+"backend.py"| Calculation and download functions
+"longtp.py"| Main CLI menu
+"requirements.txt"| Python dependencies
+"setup.sh"| Environment setup and launcher creation
+".gitignore"| Files excluded from Git
+"README.md"| Project documentation
 
 Estructura del proyecto
 
-Long-Trip/
-├── backend.py       # Funciones de cálculo y descarga
-├── longtp.py        # Menú principal de la CLI
-├── requirements.txt # Dependencias de Python
-├── setup.sh         # Instalador del entorno
-├── .gitignore       # Archivos excluidos de Git
-└── README.md        # Documentación del proyecto
+- "backend.py": funciones de cálculo y descarga.
+- "longtp.py": menú principal de la CLI.
+- "requirements.txt": dependencias de Python.
+- "setup.sh": creación del entorno e instalación.
+- ".gitignore": archivos excluidos de Git.
+- "README.md": documentación del proyecto.
 
-El directorio ".venv/" se genera durante la instalación y no debe subirse al repositorio.
+<p align="right"><a href="#readme-top">Back to top ↑</a></p><!-- ROADMAP -->Roadmap
 
-Notas de configuración
+Long Trip is a work in progress. Future features will be listed here as development goals are defined.
 
-- El instalador necesita que "python", "ffmpeg" y "node" estén disponibles en el "PATH" del sistema.
-- El backend utiliza actualmente una ruta de Node.js específica de Termux. En otros entornos puede ser necesario modificarla.
-- Si existe un archivo "cookies.txt" en el directorio del proyecto, el descargador lo utiliza. De lo contrario, continúa sin ese archivo.
-- Mantené los archivos de cookies en privado y nunca los subas al repositorio.
+Long Trip continúa en desarrollo. Las próximas funcionalidades se agregarán a medida que se definan los objetivos del proyecto.
 
-Próximas funciones
+- [ ] Define and document future features / Definir y documentar futuras funcionalidades.
+- [ ] Improve portability beyond Termux / Mejorar la compatibilidad con otros entornos.
 
-Long Trip continúa en desarrollo. Las nuevas funcionalidades se documentarán a medida que se definan los objetivos y se implementen.
+<p align="right"><a href="#readme-top">Back to top ↑</a></p><!-- LICENSE -->License
 
-Estado del proyecto
+No license has been specified yet.
 
-El proyecto está en desarrollo activo. Las funcionalidades y la configuración pueden cambiar a medida que avance el desarrollo.
+Todavía no se especificó una licencia para el proyecto.
 
----
+<p align="right"><a href="#readme-top">Back to top ↑</a></p><!-- CONTACT -->Contact
 
-Developed by "draken-Tmx" (https://github.com/draken-Tmx).
+Developer: "draken-Tmx" (https://github.com/draken-Tmx)
+
+Project Link: "Long Trip on GitHub" (https://github.com/draken-Tmx/Long-Trip)
+
+Issues and suggestions: "Open an issue" (https://github.com/draken-Tmx/Long-Trip/issues)
+
+<p align="right"><a href="#readme-top">Back to top ↑</a></p>---
+
+<div align="center">Developed by "draken-Tmx" (https://github.com/draken-Tmx)
+
+Built for the road, powered by music.
+
+Hecho para el camino, impulsado por la música.
+
+</div>
