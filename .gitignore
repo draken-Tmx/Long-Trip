@@ -1,11 +1,5 @@
-__pycache__/
-*.pyc
 .venv/
-venv/
+__pycache__/
+*.py[cod]
 cookies.txt
-*.mp3
-*.m4a
-*.mp4
-downloads/
-*.log
-.DS_Store
+.env
