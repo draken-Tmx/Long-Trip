@@ -39,11 +39,11 @@
 
 **Clona el repositorio:** 
 
-- `git clone https://github.com/draken-Tmx/Long-Trip.git`
+- `git clone https://github.com/draken-Tmx/long-trip.git`
 
 **Entra a la carpeta:** 
 
-- `cd longtrip`
+- `cd long-trip`
 
 **Instala las dependencias:**
 
@@ -59,7 +59,7 @@ pkg install python ffmpeg nodejs git`
 # USO. 
 
 - Una vez instalado ejecuta:
-`long-trip` desde la terminal, el lanzador utiliza automáticamente el entorno venv y ejecuta el archivo, no necesitas hacer `Venv` manualmente. 
+`longtrip` desde la terminal, el lanzador utiliza automáticamente el entorno venv y ejecuta el archivo, no necesitas hacer `Venv` manualmente. 
 
 
 
