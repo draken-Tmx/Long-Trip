@@ -106,7 +106,7 @@ Long-Trip/
 *si el repositorio te gustó o te resultó interesante, te agradecería mucho que le dejes una estrella* <3
 
 
-Creador [Draken-Tmx] (https://github.com/draken-Tmx)
+Creador [Draken-Tmx](https://github.com/draken-Tmx)
 
 
 
