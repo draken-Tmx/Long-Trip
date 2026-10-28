@@ -1,5 +1,5 @@
 # Long Trip
-¿ Cuantas canciones dura tu viaje ?
+¿Cuantas canciones dura tu viaje?
 -----------------------------------
 # ¿Que es long Trip?
 
