@@ -4,7 +4,7 @@ set -eu
 PROJECT_DIR="$(cd "$(dirname "$0")" && pwd)"
 VENV="$PROJECT_DIR/.venv"
 BIN_DIR="$HOME/.local/bin"
-COMMAND="$BIN_DIR/long-trip"
+COMMAND="$BIN_DIR/longtrip"
 
 echo "==> Comprobando herramientas..."
 
@@ -54,4 +54,4 @@ fi
 
 echo
 echo "Instalacion completada."
-echo "Ejecuta Long Trip con: long-trip"
+echo "Ejecuta Long Trip con: longtrip"
