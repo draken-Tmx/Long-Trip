@@ -1,4 +1,4 @@
-from backend import viaje,descarga_viaje
+from backend import viaje,descarga_viaje,limpiar
 while True:
     print("1. medir tiempo")
     print("2. descargar playlist viajera")

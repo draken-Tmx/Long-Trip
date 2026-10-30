@@ -4,3 +4,4 @@ __pycache__/
 cookies.txt
 .env
 __pycache__/
+path.json
