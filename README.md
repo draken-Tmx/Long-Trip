@@ -21,7 +21,7 @@
 
 - **Descarga Playlist:** Descarga canciones en MP3 mediante yt-dlp y FFmpeg. 
 
-- **Guardado:** Guarda las canciones con el nombre de su playlist y organizadas en numeros.
+- **Guardado:** guarda tu ruta de descarga la primera vez en un  `.json` y guarda las canciones con el nombre de su playlist  organizadas por numeros.
 
 - **Menu interactivo:** Ingresa las opciones desde el menú principal.
 
