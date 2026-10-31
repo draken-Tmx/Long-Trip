@@ -8,7 +8,7 @@ COMMAND="$BIN_DIR/longtrip"
 
 echo "==> Comprobando herramientas..."
 
-for cmd in python ffmpeg node; do
+for cmd in python ffmpeg nodejs; do
     if ! command -v "$cmd" >/dev/null 2>&1; then
         echo "Falta instalar: $cmd"
         exit 1
