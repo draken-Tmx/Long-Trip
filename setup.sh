@@ -8,10 +8,10 @@ COMMAND="$BIN_DIR/longtrip"
 
 echo "==> Comprobando herramientas..."
 
-for cmd in python ffmpeg nodejs; do
+for cmd in python ffmpeg; do
     if ! command -v "$cmd" >/dev/null 2>&1; then
         echo "Falta instalar: $cmd"
-        exit 1
+        pkg install "$cmd" -y
     fi
 done
 
@@ -26,7 +26,7 @@ echo "==> Instalando dependencias..."
 "$VENV/bin/python" -m pip install --upgrade pip
 "$VENV/bin/python" -m pip install -r "$PROJECT_DIR/requirements.txt"
 
-echo "==> Creando comando long-trip..."
+echo "==> Creando comando longtrip..."
 
 mkdir -p "$BIN_DIR"
 
@@ -38,20 +38,25 @@ LAUNCHER
 
 chmod +x "$COMMAND"
 
-echo "==> Configurando fish..."
+echo "==> Configurando PATH..."
 
-if command -v fish >/dev/null 2>&1; then
-    fish -c 'fish_add_path "$HOME/.local/bin"'
+# bash
+if [ -f "$HOME/.bashrc" ]; then
+    grep -Fq '.local/bin' "$HOME/.bashrc" || echo 'export PATH="$HOME/.local/bin:$PATH"' >> "$HOME/.bashrc"
 fi
 
-echo "==> Configurando zsh..."
-
+# zsh
 if [ -f "$HOME/.zshrc" ]; then
-    if ! grep -Fq '.local/bin' "$HOME/.zshrc"; then
-        printf '\nexport PATH="$HOME/.local/bin:$PATH"\n' >> "$HOME/.zshrc"
-    fi
+    grep -Fq '.local/bin' "$HOME/.zshrc" || echo 'export PATH="$HOME/.local/bin:$PATH"' >> "$HOME/.zshrc"
 fi
 
-echo
+# fish - fish_add_path ya es permanente
+if command -v fish >/dev/null 2>&1; then
+    mkdir -p "$HOME/.config/fish"
+    fish -c "fish_add_path $BIN_DIR" 2>/dev/null || true
+fi
+
+echo ""
 echo "Instalacion completada."
 echo "Ejecuta Long Trip con: longtrip"
+echo "Si no te lo encuentra, hace: source ~/.bashrc"
