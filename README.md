@@ -86,7 +86,7 @@ El descargador utiliza *yt-dlp* y *FFmpeg* para extraer el audio y convertirlo a
 Algunas veces youtube/Youtube music puede tomar tu solicitud como bot y asi cancelar la descarga del archivo, para impedir eso es necesario que copies tus cookies.txt a la carpeta **Long-Trip** si no sabes como hacerlo aqui te enseño;
 
 si usas firefox o cualquier otro navegador dirigete al apartado de extensiones y descarga `get cookies` paso siguiente, abre youtube.com e ingresa con tu cuenta, copia las cookies y descargalas.
-paso tres, mover laa cookies a la carpeta mencionada.
+paso tres, mover las cookies a la carpeta mencionada.
 
 # IMPORTANTE.
 
@@ -100,7 +100,7 @@ Long-Trip/
 ├── backend.py       
 ├── longtp.py        
 ├── requirements.txt 
-
+├── cookies.txt
 ├── setup.sh         
 ├── .gitignore       
 └── README.md 
