@@ -99,9 +99,9 @@ Long-Trip/
 
 ├── backend.py       
 ├── longtp.py        
-├── requirements.txt 
-├── cookies.txt
-├── setup.sh         
+├── requirements.txt     
+├── cookies.txt     
+├── setup.sh      
 ├── .gitignore       
 └── README.md 
 
