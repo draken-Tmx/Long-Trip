@@ -75,12 +75,22 @@ pkg install python ffmpeg nodejs git`
 
 La calculadora utiliza una duración promedio de cancion de **3 minutos con 40 segundos** y agrega un margen del 15% para paradas e inconvenientes en el viaje.
 
-*El resultado es una estimación del viaje, no es una calculacion exacta, abstente a ser un tonto* 
-
+*El resultado es una estimación del viaje, no es una calculacion exacta, abstente a ser un tonto*
 
 # Descarga de playlist. 
 
 El descargador utiliza *yt-dlp* y *FFmpeg* para extraer el audio y convertirlo a MP3 en maxima calidad, procesar los metadatos y extraer las miniaturas disponibles. 
+
+# Cookies.
+
+Algunas veces youtube/Youtube music puede tomar tu solicitud como bot y asi cancelar la descarga del archivo, para impedir eso es necesario que copies tus cookies.txt a la carpeta **Long-Trip** si no sabes como hacerlo aqui te enseño;
+
+si usas firefox o cualquier otro navegador dirigete al apartado de extensiones y descarga `get cookies` paso siguiente, abre youtube.com e ingresa con tu cuenta, copia las cookies y descargalas.
+paso tres, mover laa cookies a la carpeta mencionada.
+
+# IMPORTANTE.
+
+Las cookies guardan tu token de sesion, incluyelas al `.gitignore` para asi no subirlas al repositorio.
 
 
 # Estructura del proyecto. 
