@@ -6,27 +6,27 @@ VENV="$PROJECT_DIR/.venv"
 BIN_DIR="$HOME/.local/bin"
 COMMAND="$BIN_DIR/longtrip"
 
-echo "==> Comprobando herramientas..."
+echo "==> Checking tools..."
 
 for cmd in python ffmpeg; do
     if ! command -v "$cmd" >/dev/null 2>&1; then
-        echo "Falta instalar: $cmd"
+        echo "need to install: $cmd"
         pkg install "$cmd" -y
     fi
 done
 
-echo "==> Creando entorno virtual..."
+echo "==> Creating virtual environment..."
 
 if [ ! -x "$VENV/bin/python" ]; then
     python -m venv "$VENV"
 fi
 
-echo "==> Instalando dependencias..."
+echo "==> Installing dependencies..."
 
 "$VENV/bin/python" -m pip install --upgrade pip
 "$VENV/bin/python" -m pip install -r "$PROJECT_DIR/requirements.txt"
 
-echo "==> Creando comando longtrip..."
+echo "==> Creating command longtrip..."
 
 mkdir -p "$BIN_DIR"
 
@@ -38,7 +38,7 @@ LAUNCHER
 
 chmod +x "$COMMAND"
 
-echo "==> Configurando PATH..."
+echo "==> Configuring PATH..."
 
 # bash
 if [ -f "$HOME/.bashrc" ]; then
@@ -57,6 +57,6 @@ if command -v fish >/dev/null 2>&1; then
 fi
 
 echo ""
-echo "Instalacion completada."
-echo "Ejecuta Long Trip con: longtrip"
-echo "Si no te lo encuentra, hace: source ~/.bashrc"
+echo "Installation completed."
+echo "Execute Long Trip with: longtrip"
+echo "if you can't find it, do: source ~/.bashrc"

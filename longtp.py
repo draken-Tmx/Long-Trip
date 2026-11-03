@@ -1,14 +1,15 @@
-from backend import viaje,descarga_viaje,limpiar
+from backend import journey,trip_download,clear
 while True:
-    print("1. medir tiempo")
-    print("2. descargar playlist viajera")
-    print("3. salir")
+    clear()
+    print("1. Calculate time")
+    print("2. Download traveling playlist")
+    print("3. exit")
     op=input("> ")
     if op == "1":
-        viaje()
+        journey()
     elif op == "2":
-        descarga_viaje()
+        trip_download()
     elif op == "3":
         break
     else:
-        print("incorrecto")
+        print("incorrect")
